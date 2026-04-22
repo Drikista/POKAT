@@ -44,5 +44,14 @@ TagManager:
   - name: Telas
     uniqueID: 927211517
     locked: 0
+  - name: Background
+    uniqueID: 959450507
+    locked: 0
+  - name: Interactible
+    uniqueID: 1252414431
+    locked: 0
+  - name: HUD
+    uniqueID: 1460240875
+    locked: 0
   m_RenderingLayers:
   - Default
