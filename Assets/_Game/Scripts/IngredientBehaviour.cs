@@ -5,38 +5,22 @@ public class IngredientBehaviour : MonoBehaviour
     public Sprite[] minhasImagens;
     public int myID;
 
-    public int [] estoque;
-
-void awake()
+public void removerIngrediente(int valor)
 {
-for (int i = 0; i < 17; i++)
-    {
-    estoque[i] = 5;
-    }
+    IngredientManager.instance.remover(myID, valor);
 }
 
- public void adicionar(int id, int valor)
-    {
-        estoque[id] += valor;
-    }
+public void adicionarIngrediente(int valor)
+{
+    IngredientManager.instance.adicionar(myID, valor);
+}
 
-    public void remover(int id, int valor)
-    {
-        estoque[id] -= valor;
+void OnMouseDown()
+{
+    removerIngrediente(1);
+        Debug.Log("ID: " + myID + " | Restante: " + IngredientManager.instance.estoque[myID]);
+}
 
-        if (estoque[id] < 0)
-            estoque[id] = 0;
-    }
-
-    public void removerIngrediente(int valor)
-    {
-    this.remover(myID, valor);
-    }
-
-    public void adicionarIngrediente(int valor)
-    {
-    this.adicionar(myID, valor);
-    }
 public void  atualizaIngrediente(){
 
 SpriteRenderer sr = GetComponent<SpriteRenderer>();
